@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">TravelGo</string>
+    <string name="app_description">Turismo Sustentable en Chile</string>
+
+    <!-- Home Screen -->
+    <string name="welcome_title">Turismo Sustentable</string>
+    <string name="welcome_subtitle">Explora Chile de forma responsable</string>
+
+    <!-- Paquetes -->
+    <string name="paquetes_title">Paquetes Disponibles</string>
+    <string name="ver_detalles">Ver Detalles</string>
+    <string name="reservar_ahora">Reservar Ahora</string>
+    <string name="certificado_sustentable">Certificado Sustentable</string>
+
+    <!-- Reservas -->
+    <string name="nueva_reserva">Nueva Reserva</string>
+    <string name="datos_cliente">Datos del Cliente</string>
+    <string name="detalles_reserva">Detalles de la Reserva</string>
+    <string name="crear_reserva">Crear Reserva</string>
+
+    <!-- Formulario -->
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="email">Email</string>
+    <string name="telefono">Teléfono</string>
+    <string name="rut">RUT</string>
+    <string name="numero_personas">Número de Personas</string>
+    <string name="fecha_inicio">Fecha de Inicio</string>
+    <string name="fecha_fin">Fecha de Fin</string>
+    <string name="notas">Notas Adicionales</string>
+
+    <!-- Cámara -->
+    <string name="capturar_foto">Capturar Foto</string>
+    <string name="foto_cliente">Foto del Cliente</string>
+    <string name="abrir_camara">Abrir Cámara</string>
+    <string name="tomar_otra">Tomar Otra</string>
+    <string name="continuar">Continuar</string>
+
+    <!-- Confirmación -->
+    <string name="reserva_creada">¡Reserva Creada!</string>
+    <string name="pago_completado">¡Pago Completado!</string>
+    <string name="proceder_pago">Proceder al Pago</string>
+    <string name="pagar_mas_tarde">Pagar Más Tarde</string>
+    <string name="volver_inicio">Volver al Inicio</string>
+
+    <!-- Mensajes -->
+    <string name="error_permisos_camara">Se necesita permiso de cámara para continuar</string>
+    <string name="error_crear_reserva">Error al crear la reserva</string>
+    <string name="foto_guardada">Foto guardada exitosamente</string>
+
+    <!-- Validaciones -->
+    <string name="campo_obligatorio">Este campo es obligatorio</string>
+    <string name="email_invalido">Email inválido</string>
+    <string name="debe_capturar_foto">Debe capturar una foto del cliente</string>
+</resources>

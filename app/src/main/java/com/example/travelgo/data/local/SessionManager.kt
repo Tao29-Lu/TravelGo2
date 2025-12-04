@@ -1,0 +1,60 @@
+package com.example.travelgo.data.local
+
+import android.content.Context
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+
+private val Context.dataStore by preferencesDataStore("session_prefs")
+
+class SessionManager(private val context: Context) {
+
+    var authToken: String? = null
+
+    companion object {
+        private val TOKEN_KEY = stringPreferencesKey("token")
+        private val USERNAME_KEY = stringPreferencesKey("username")
+        private val IS_LOGGED_IN_KEY = booleanPreferencesKey("is_logged_in")
+    }
+
+    suspend fun saveAuthToken(token: String) {
+        authToken = token
+        context.dataStore.edit { prefs ->
+            prefs[TOKEN_KEY] = token
+        }
+    }
+
+    suspend fun getAuthToken(): String? {
+        if (authToken == null) {
+            authToken = context.dataStore.data.map { it[TOKEN_KEY] }.first()
+        }
+        return authToken
+    }
+
+    suspend fun saveUsername(username: String) {
+        context.dataStore.edit { prefs ->
+            prefs[USERNAME_KEY] = username
+        }
+    }
+
+    suspend fun getUsername(): String? {
+        return context.dataStore.data.map { it[USERNAME_KEY] }.first()
+    }
+
+    suspend fun saveLoginState(isLoggedIn: Boolean) {
+        context.dataStore.edit { prefs ->
+            prefs[IS_LOGGED_IN_KEY] = isLoggedIn
+        }
+    }
+
+    fun isLoggedIn(): Flow<Boolean> = context.dataStore.data.map { it[IS_LOGGED_IN_KEY] ?: false }
+
+    suspend fun logout() {
+        authToken = null
+        context.dataStore.edit { it.clear() }
+    }
+}
